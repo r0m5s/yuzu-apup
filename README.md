@@ -26,9 +26,6 @@ To run it:
 ```bash
 ./yuzu-apup
 ```
-
-After installing the AppImageLauncher will automatically create a desktop file. Just search by it like a normal application, it may takes some seconds to the AppImageLauncher to create the desktop file.
-
 # Todo
 
 * Remove older appimage file if there's an update available
