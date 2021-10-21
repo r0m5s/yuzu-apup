@@ -26,10 +26,6 @@ To run it:
 ```bash
 ./yuzu-apup
 ```
-# Todo
-
-* Remove older appimage file if there's an update available
-
 ## License
 This project is released under the MIT license.
 Check out the [LICENSE](LICENSE) file for more information.
