@@ -19,7 +19,7 @@ I tried to make the script as readable possible for the people who want to see t
 # How it works
 
 All the files are created and runned in the $HOME/.local, to avoid using the root user, and they follow this structure:
-  * .local/bin - launcher
+  * .local/appimages - launcher
   * .local/share/applications - Launcher desktop file
   * .local/share/icons - yuzu svg icon
 

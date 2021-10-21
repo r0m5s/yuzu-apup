@@ -13,10 +13,10 @@
 filename=$(curl -s https://github.com/yuzu-emu/yuzu-mainline/releases | grep ".AppImage" | sed -n "1p" | cut -d\" -f2 | cut -d / -f7)
 
 # If last version is installed exit code
-[[ -e $HOME/.local/bin/$filename ]] && echo "Already up to date" && exit 1
+[[ -e $HOME/.local/appimages/$filename ]] && echo "Already up to date" && exit 1
 
 # Remove previous version
-rm -f $HOME/.local/bin/yuzu-*.AppImage
+rm -f $HOME/.local/appimages/yuzu-*.AppImage
 
 version=$(curl -s https://github.com/yuzu-emu/yuzu-mainline/releases | grep ".AppImage" | sed -n "1p" | cut -d\" -f2 | cut -d / -f6) # Version of the current mainline
 package=$(echo https://github.com$(curl -s https://github.com/yuzu-emu/yuzu-mainline/releases | grep ".AppImage" | sed -n "1p" | cut -d\" -f2)) # Latest release download link
@@ -34,15 +34,15 @@ sleep 4
 echo "Downloading package"
 wget -q --inet4-only --show-progress --directory-prefix=/tmp $package
 
-[[ ! -f $HOME/.local/bin ]] && mkdir -p $HOME/.local/bin
-install -m755 /tmp/$filename $HOME/.local/bin
+[[ ! -f $HOME/.local/appimages ]] && mkdir -p $HOME/.local/appimages
+install -m755 /tmp/$filename $HOME/.local/appimages
 
 # Create/Update desktop file
 cat << EOF > yuzu.desktop
 [Desktop Entry]
 Name=Yuzu
 Icon=$HOME/.local/share/icons/yuzu.svg
-Exec=$HOME/.local/bin/$filename
+Exec=$HOME/.local/appimages/$filename
 Terminal=false
 Type=Application
 Categories=Game;Emulator;Qt;
