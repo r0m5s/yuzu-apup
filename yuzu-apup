@@ -12,15 +12,15 @@
 # I hope it has good use to you
 ##########################################################
 
-# If last version is installed exit code
-[[ -e $HOME/.local/bin/$filename ]] && echo "Already up to date" && exit 1
-
 # Version of the current mainline
 version=$(curl -s https://github.com/yuzu-emu/yuzu-mainline/releases | grep ".AppImage" | sed -n "1p" | cut -d\" -f2 | cut -d / -f6)
 # Name of the Appimage file
 filename=$(curl -s https://github.com/yuzu-emu/yuzu-mainline/releases | grep ".AppImage" | sed -n "1p" | cut -d\" -f2 | cut -d / -f7)
 # Latest release download link
 package=$(echo https://github.com$(curl -s https://github.com/yuzu-emu/yuzu-mainline/releases | grep ".AppImage" | sed -n "1p" | cut -d\" -f2))
+
+# If last version is installed exit code
+[[ -e $HOME/.local/bin/$filename ]] && echo "Already up to date" && exit 1
 
 echo -e "
 -------------------------------------------------------
@@ -29,7 +29,6 @@ Yuzu Mainline Appimage
 Version: $version
 -------------------------------------------------------
 "
-
 sleep 4
 
 #Download the AppImage
@@ -62,4 +61,4 @@ install -m644 yuzu.svg $HOME/.local/share/icons
 # Clean installation files
 rm /tmp/$filename
 
-echo Done
+echo -e "\nLatest version installed"
