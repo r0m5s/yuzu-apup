@@ -6,8 +6,7 @@ Yuzu Mainline GitHub: https://github.com/yuzu-emu/yuzu-mainline
 
 # Dependencies
 
-1. AppImageLauncher
-2. Possibly the normal Yuzu dependecies (need to test in other distros - only tested on arch)
+1. Possibly the normal Yuzu dependecies (need to test in other distros - only tested on arch)
 
 # Why this script?
 
@@ -17,19 +16,22 @@ I tried to make the script as readable possible for the people who want to see t
 
 # How it works
 
-The script downloads the package to the "$HOME/Applications" which is the default folder to the AppImageLauncher and gives the permission to be executable with `chmod +x $package`.
+All the files are created and runned in the $HOME/.local folder with the following estructure:
+  * .local/bin - launcher
+  * .local/share/applications - Launcher desktop file
+  * .local/share/icons - yuzu svg icon
 
 To run it:
 
 ```bash
-./update-yuzu-mainline-appimage.sh
+./yuzu-apup
 ```
 
 After installing the AppImageLauncher will automatically create a desktop file. Just search by it like a normal application, it may takes some seconds to the AppImageLauncher to create the desktop file.
 
-# To Do
+# Todo
 
-1. Install without the need of AppImageLauncher
+* Remove older appimage file if there's an update available
 
 ## License
 This project is released under the MIT license.
