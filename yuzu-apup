@@ -9,6 +9,9 @@
 # I hope it has good use to you
 ##########################################################
 
+# Avoids script running with root
+[ "$EUID" = "0" ] && echo "Avoid using the script with root" && exit
+
 # Name of the Appimage file
 filename=$(curl -s https://github.com/yuzu-emu/yuzu-mainline/releases | grep ".AppImage" | sed -n "1p" | cut -d\" -f2 | cut -d / -f7)
 
