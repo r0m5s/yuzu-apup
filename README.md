@@ -8,26 +8,32 @@ Yuzu Mainline GitHub: https://github.com/yuzu-emu/yuzu-mainline
 
 1. curl
 2. wget
-3. Possibly the normal Yuzu dependecies (need to test in other distros - only tested on arch)
+3. Possibly the normal Yuzu dependencies (need to test in other distros - only tested on arch)
 
 # Why this script?
 
-Basically the compiling time. I don't have a powerfull machine to always be compiling the yuzu build and since the Yuzu Team started doing Appimages I thought "Why not writing a script?".
+Basically the compiling time. I don't have a powerful machine to always be compiling the yuzu build and since the Yuzu Team started doing Appimages I thought "Why not writing a script?".
 
 I tried to make the script as readable possible for the people who want to see the source code and possibly change it. Always open to feedback to improve it :)
 
 # How it works
 
-All the files are created and runned in the $HOME/.local, to avoid using the root user, and they follow this structure:
-  * .local/appimages - launcher
-  * .local/share/applications - Launcher desktop file
-  * .local/share/icons - yuzu svg icon
+The script automatically analyses for the most recent version of the yuzu appimage available on the official yuzu repositories, verifies if there's an existing or previous version of yuzu and downloads the new version of the application in case a new update is found. 
 
-To run it:
+All the working files are in the $HOME/.local, to avoid the use of the root user, and they follow this structure:
+  
+  * .local/appimages/yuzu-(version).appimage - launcher
+  * .local/share/applications/yuzu.desktop - Launcher desktop file
+  * .local/share/icons/yuzu,svg - yuzu svg icon
+
+# Running the Script
 
 ```bash
-./yuzu-apup
+bash yuzu-apup
 ```
+
+The script works as an updater, therefore after installing/updating simply run the application as normal.
+
 ## License
 This project is released under the MIT license.
 Check out the [LICENSE](LICENSE) file for more information.
