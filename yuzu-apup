@@ -63,5 +63,6 @@ install -m644 yuzu.svg $HOME/.local/share/icons
 
 # Clean installation files
 rm /tmp/$filename
+echo -e "\nCleaning files\n"
 
 echo -e "\nLatest version installed"
