@@ -6,9 +6,8 @@ Yuzu Mainline GitHub: https://github.com/yuzu-emu/yuzu-mainline
 
 # Dependencies
 
-1. curl
-2. wget
-3. Possibly the normal Yuzu dependencies (need to test in other distros - only tested on arch)
+1. GNU curl
+2. GNU wget
 
 # Why this script?
 
