@@ -24,7 +24,7 @@ All the working files are in the $HOME/.local, to avoid the use of the root user
   
   * .local/appimages/yuzu-(version).appimage - launcher
   * .local/share/applications/yuzu.desktop - Launcher desktop file
-  * .local/share/icons/yuzu,svg - yuzu svg icon
+  * .local/share/icons/yuzu.svg - yuzu svg icon
 
 # Running the Script
 
